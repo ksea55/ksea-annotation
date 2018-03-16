@@ -1,0 +1,4 @@
+整个项目ksea-annotation是为只有学习springboot做铺垫，
+在学习springboot之前对spring的整个基于注解也就是@annotation开发进行学习与巩固
+便于对springboot的学习与理解
+因为在springboot中基本上是基于annotation开发的模式
