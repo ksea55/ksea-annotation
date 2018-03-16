@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--
+    spring 组件扫描配置
+    use-default-filters="true"默认是扫描所有包(包含@Repository,@Service,@Controller)等注解，=false禁止扫描所有包
+    -->
+
+    <!-- 第一种 exclude-filter 排除过滤掉@controller的组件，其@Repository与@Service组建被扫描
+       当在使用排他策略exclude-filter，其use-default-filters="true"设置成true
+    -->
+    <!--<context:component-scan base-package="com.ksea.spring.chapter2" use-default-filters="true">
+        <context:exclude-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"></context:exclude-filter>
+    </context:component-scan>-->
+
+
+    <!--第二种：包含组件扫描
+        当在使用包含策略的时候include-filter 其use-default-filters="false"
+    -->
+    <context:component-scan base-package="com.ksea.spring.chapter2" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+
+    </context:component-scan>
+
+
+</beans>
