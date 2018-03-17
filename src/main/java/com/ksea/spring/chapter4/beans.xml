@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--在spring中 默认是单例模式,singleton,容器IOC在创建的时候，就已经将对象给创建了，并防止到容器中,使用懒加载之后，第一次使用的时候才会创建-->
+    <bean id="person" class="com.ksea.spring.chapter3.Person" scope="singleton" lazy-init="true">
+        <property name="name" value="jacky"/>
+        <property name="age" value="32"/>
+    </bean>
+
+
+</beans>

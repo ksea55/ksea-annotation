@@ -1,0 +1,13 @@
+lazy懒加载
+<bean id="person" class="com.ksea.spring.chapter3.Person" scope="singleton" lazy-init="true">
+        <property name="name" value="jacky"/>
+        <property name="age" value="32"/>
+    </bean>
+
+  在xml中已lazy-init="true"体现默认是false
+
+
+  注解驱动的方式 已 @Lazy 体现
+
+
+  懒加载针对单例模式，singleton，当使用懒加载之后，对象不会在IOC容器创建的时候进行创建，而是在进行调用的时候才创建,
