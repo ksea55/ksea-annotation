@@ -1,0 +1,5 @@
+通过实现spring提供的 BeanPostProcessor 接口,并实现其
+ public Object postProcessBeforeInitialization(Object bean, String beanName)
+ 与
+ public Object postProcessAfterInitialization(Object bean, String beanName)
+ 两个方法，我们可以对其 对象在初始化之前与初始化之后的情况进行后置工作
