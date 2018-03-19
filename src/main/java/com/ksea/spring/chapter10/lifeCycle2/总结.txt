@@ -1,0 +1,3 @@
+
+通过实现 InitializingBean接口，并实现其 public void afterPropertiesSet()方法对其进行初始化方法
+ 通过实现 DisposableBean接口，并实现其 public void destroy()方法对其进行对象的销毁
