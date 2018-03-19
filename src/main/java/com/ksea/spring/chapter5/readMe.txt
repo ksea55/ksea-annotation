@@ -1,0 +1,6 @@
+Conditional 注解
+根据条件创建bean，当满足该条件的时候财会创建，
+它的value需要实现Condition接口，规则 如LinuxCondition,在springboot中其被大量使用
+
+它用在方法的时候，是该方法满足该添加财会创建，
+当用在类上面 表示该配置文件满足该条件才会运行创建
