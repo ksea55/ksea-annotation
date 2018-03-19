@@ -1,0 +1,21 @@
+添加组件的另外一种方式@importSelector
+
+需要实现其ImportSelector接口,其public String[] selectImports(AnnotationMetadata importingClassMetadata);方法
+返回的是需要注入的组件的全称名 包括它的包名
+其注意的点 返回的结果中不能返回null，否则会抛出空指针异常,
+
+原因如下:
+
+        /**这里默认返回的是一个长度为0的数组，不能返回null
+         * 因为在org.springframework.context.annotation.ConfigurationClassParser中
+         * 下面的方法
+         * Factory method to obtain {@link SourceClass}s from class names.
+         * private Collection<SourceClass> asSourceClasses(String[] classNames) throws IOException {
+         List<SourceClass> annotatedClasses = new ArrayList<SourceClass>(classNames.length);
+         for (String className : classNames) {
+         annotatedClasses.add(asSourceClass(className));
+         }
+         return annotatedClasses;
+
+         如果返回null 这里的classNames.length就会抛出空指针异常
+         */
