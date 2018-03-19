@@ -1,0 +1,26 @@
+
+bean的生命周期 主要包含bean的create---->init----->detory (创建---->初始化---->销毁)
+
+在spring 中的xml中主要通过
+
+    <bean id="person" class="com.ksea.spring.chapter1.Person" init-method="" destroy-method="">
+        <property name="name" value="张三"/>
+        <property name="age" value="21"/>
+    </bean>
+
+    这种方式进行配置 主要是 init-method=""与 destroy-method=""
+
+    这种方式通过注解的方式主要是通过  @Bean(value = "student", initMethod = "init", destroyMethod = "detory") 这种方式指明
+
+
+    正对其作用域的初始化
+
+
+    作用域                                                  描述                                                                                    容器职责
+
+    singleton(单例)                               跟随IOC容器的创建而创建,当对象创建完成,执行init初始化方法,当容器关闭调用detory销毁方法                        负责创建bean，并管理bean
+
+
+
+    prototype(多实例)                             不会跟随IOC容器的创建而创建,而是在调用该对象的时候，执行对象的创建，然后初始化，并不会随着                       只负责创建，不负责bean的管理
+                                                 容器的关闭而销毁
