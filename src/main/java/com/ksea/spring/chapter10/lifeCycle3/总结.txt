@@ -1,0 +1,12 @@
+
+ 通过 javax.annotation.PostConstruct;
+     javax.annotation.PreDestroy;
+
+   /**
+    * 通过JSR250,JAVA提供的规范，注解方法是来进行对象的初始化与对象销毁
+    *
+    * @PostConstruct 对象创建完成并赋值完成之后进行调用
+    * @PreDestroy对象移除之前进行销毁
+    */
+
+    这是有JAVA的规范中的JSR250提供的
