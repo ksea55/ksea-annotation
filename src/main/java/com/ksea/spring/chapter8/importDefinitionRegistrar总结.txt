@@ -1,0 +1,4 @@
+
+通过手动注册的方式实现对组件的注入,需要实现其ImportDefinitionRegistrar接口
+
+并在Import注解中进行使用
