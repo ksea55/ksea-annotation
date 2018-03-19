@@ -1,0 +1,16 @@
+当我们需要使用工厂bean来创建我们的bean的时候
+只需要实现其接口 FactroyBean接口
+其中 getObject方法返回的是 我们要创建的对象
+    getObjectType 方法返回的是我们创建的对象的类型
+    isSingleton  作用域 是否是单例作用域
+                     * false:多实例作用域 也就是prototype，没调用一次创建一次
+                     * true:单例作用域 也就是singleton,只创建一份
+
+
+
+ 在容器中调用的时候，applicationContext.getBean("studentFactoryBean");默认返回的是我们的要创建的对象的类型 如 class com.ksea.spring.chapter9.Student
+ 当我们要获取工厂本身的类型的时候,只需要添加&，如
+  applicationContext.getBean("&studentFactoryBean");  此处返回的结果 -->class com.ksea.spring.chapter9.StudentFactoryBean
+
+
+
