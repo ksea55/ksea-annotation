@@ -1,0 +1,18 @@
+
+基于XML的方式，我们是通过如下
+
+    <bean id="person" class="com.ksea.spring.chapter11.Person">
+        <property name="age" value="21"/>
+        <property name="name" value="jacky"/>
+    </bean>
+
+    value来给对象赋值
+
+
+ 基于注解的方式我们可以通过@Value注解来进行赋值
+ 在使用@Value注解赋值，我们可以使用基本数据 @Value("基本数据")
+ 另外是可以使用Spring中的el表达式 #{}  @Value("#{22-1}")
+ 其次还可以使用${}赋值,获取环境变量中的值  @Value("${nice}")
+
+
+
