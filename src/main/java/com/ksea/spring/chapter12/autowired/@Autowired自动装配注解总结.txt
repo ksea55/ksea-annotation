@@ -1,0 +1,49 @@
+从源码中可以看到
+@Target({ElementType.CONSTRUCTOR, ElementType.METHOD, ElementType.PARAMETER, ElementType.FIELD, ElementType.ANNOTATION_TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface Autowired {}
+@Autowired 可以注解到构造器中，方法上，参数上,属性字段上
+
+
+
+一、应用到属性上
+    @Autowired默认情况下是根据属性类型记性查找 自动装箱,ByType-->applicationContext.getBean(StudentDao.class);
+    当在容器中同样的类型有多个的时候，如 StudentDao在容器中有多个的时候，则是根据ByName查找自动装箱-->applicationContext.getBean("studengDao");
+
+
+
+二、  @Qualifier("studentDao")
+      @Autowired
+      private StudentDao studentDao1;
+@Qualifier注解配合@Autowired配合使用，指定其bean 为studentDao
+
+
+三、  @Autowired(required = false)  其中required 默认是true 如果没有查找到会抛出异常，当设置成false 会设置成null
+
+
+四、
+@Service
+public class PersonService {
+
+    private StudentDao studentDao;
+
+
+    @Autowired
+    public PersonService(StudentDao studentDao) {
+        this.studentDao = studentDao;
+    }
+
+    @Override
+    public String toString() {
+        return "PersonService{" +
+                "studentDao=" + studentDao +
+                '}';
+    }
+}
+
+@Autowired应用在构造函数上，其也会进行自动装配，在这种情况下其实也可以不用写,
+ public PersonService(StudentDao studentDao) {
+        this.studentDao = studentDao;
+    }直接 这样，spring也会将其进行自动装备注入
+
