@@ -1,0 +1,5 @@
+@Autowired 注解是spring提供的，其功能强大，自动装配
+@Resource 是 JSR250 JAVA规范提供提供的  它也能完成其自动装备，但不能和@Autowired的一些特性使用
+@@Inject 是JSR330 JAVA规范提供的，它能跟完全与@Autowired的特性使用
+
+在使用中推荐还是使用@Autowired比较好

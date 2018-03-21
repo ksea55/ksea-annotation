@@ -25,6 +25,13 @@
             <artifactId>spring-context</artifactId>
             <version>4.3.13.RELEASE</version>
         </dependency>
+
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
+
     </dependencies>
     <!--构建资源文件打包，maven在编译的时候将在java中的文件也进行编译过去-->
     <build>
