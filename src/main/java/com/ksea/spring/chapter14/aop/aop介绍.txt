@@ -1,0 +1,2 @@
+AOP (Aspect Oriented Programming)面向切面编程
+    指在程序运行期间动态的将某段代码切入到指定方法，指定位置进行运行的编程方式
