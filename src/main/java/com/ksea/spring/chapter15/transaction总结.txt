@@ -1,0 +1,20 @@
+在使用事务注解组件中,
+我们需要对其
+很关键的步骤
+1:在配置类中添加开启事务注解管理 @EnableTransactionManagement
+
+2：注入其事务管理器
+ @Bean //注入事务管理器
+    public PlatformTransactionManager transactionManager() throws PropertyVetoException {
+        DataSourceTransactionManager dataSourceTransactionManager = new DataSourceTransactionManager(dataSource());
+        return dataSourceTransactionManager;
+    }
+
+
+3:在需要使用的方法上面添加事务注解驱动
+@Transactional(isolation = Isolation.DEFAULT, propagation = Propagation.REQUIRED, rollbackFor = {Exception.class})
+    public void add(Student student) {
+        this.studentDao.save(student);
+        System.out.println("数据已添加...........");
+        int result = 10 / 0; //抛出异常测试事务回滚
+    }
